@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kauppalista</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  Hello World!
+    <div class="container">
+        <header class="header">
+            <h2 class="header-text">Thgis is text</h2>
+            <div class="header-btns">
+                <button class="lists-btn"><img src="./static/list.svg" alt=""></button>
+                <button class="new-item-btn"><img src="./static/plus.svg" alt=""></button>
+                <button class="delete-itm-btn"><img src="./static/check.svg" alt=""></button>
+                <button class="undo--btn"><img src="./static/search.svg" alt=""></button>
+            </div>
+        </header>
+        <ul class="item-list" id="result">
+            <li class="list-item">
+                <input type="checkbox" name="a" id="a">
+                <p class="used">This is text</p>
+            </li>
+            <li class="list-item">
+                <input type="checkbox" name="check" id="check">
+                <input type="text">
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
