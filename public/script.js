@@ -20,26 +20,29 @@ buttons.forEach((button)=> {
 
 listItems[0].addEventListener("keyup", (e) => {
     if (e.key === "Enter" && listItems[0].innerHTML !== ""){
-        addItem(listItems[0].innerHTML)
+        addItem(listItems[0].lastChild.value)
     }
 })
 
 
 
 function start() {
-    const li = document.createElement('li')
+    let li = document.createElement('li')
     li.classList.add("list-item")
     listItems.push(li)
     li.innerHTML = `<input type="checkbox"><input type="text">`
     result.appendChild(li);
-
 }
 
 function addItem(text){
-    const li = document.createElement('li')
+    let li = document.createElement('li')
     li.classList.add("list-item")
     listItems.push(li)
-    li.innerHTML = `<p>${text}</p>`
-    result.prepend(li);
+    li.innerHTML = `<input type="checkbox"><p>${text}</p>`
+    console.log(result)
+    result.removeChild(result.childNodes.item(result.childNodes.length -1));
+    result.append(li)
+    start()
 }
+
 
