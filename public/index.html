@@ -1,32 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kauppalista</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h2 class="header-text">Thgis is text</h2>
+            <h2 class="header-text" id="header-text">Thgis is text</h2>
             <div class="header-btns">
-                <button class="lists-btn"><img src="./static/list.svg" alt=""></button>
-                <button class="new-item-btn"><img src="./static/plus.svg" alt=""></button>
-                <button class="delete-itm-btn"><img src="./static/check.svg" alt=""></button>
-                <button class="undo--btn"><img src="./static/search.svg" alt=""></button>
+                <button class="lists-btn" id="lists-btn"><img src="./static/list.svg" alt=""></button>
+                <button class="new-item-btn" id="new-itm-btn"><img src="./static/plus.svg" alt=""></button>
+                <button class="delete-itm-btn" id="delete-itm-btn"><img src="./static/trash.svg" alt=""></button>
+                <button class="undo-btn" id="undo-btn"><img src="./static/undo.svg" alt=""></button>
             </div>
         </header>
         <ul class="item-list" id="result">
-            <li class="list-item">
-                <input type="checkbox" name="a" id="a">
-                <p class="used">This is text</p>
-            </li>
-            <li class="list-item">
-                <input type="checkbox" name="check" id="check">
-                <input type="text">
-            </li>
+
         </ul>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
