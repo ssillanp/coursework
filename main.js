@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const server = http.createServer((req, res) => {
     // Build the file path
-    let filePath = path.join(__dirname, '/../',  "public", req.url === "/" ? "index.html" : req.url);
+    let filePath = path.join(__dirname, "public", req.url === "/" ? "index.html" : req.url);
     console.log(filePath);
 
     // Extension of the file
@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
             if (err.code == "ENOENT") {
                 // Page not found
                 fs.readFile(
-                    path.join(__dirname, "/../", "public", "404.html"),
+                    path.join(__dirname, "public", "404.html"),
                     (err, content) => {
                         res.writeHead(404, { "Content-Type": "text/html" });
                         res.end(content, "utf8");
