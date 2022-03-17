@@ -9,7 +9,7 @@ const lists =["Lista 1", "Lista 2", "Lista 3"]
 
 inputCheck.disabled = true
 
-
+//Listener for the buttons
 buttons.forEach((button)=> {
     button.addEventListener("click", (e)=>{
         if(e.currentTarget.id === "lists-btn"){
@@ -25,13 +25,14 @@ buttons.forEach((button)=> {
     })
 })
 
+//Listener for input new item
 inputItem.addEventListener("keyup", (e) => {
     if (e.key === "Enter" && inputItem.innerHTML !== ""){
         addItem(inputText.value)
     }
 })
 
-
+//adds an item in the list
 function addItem(text){
     let li = document.createElement('li')
     li.classList.add("list-item")
@@ -41,6 +42,7 @@ function addItem(text){
     inputText.value = null
 }
 
+//deletes an item from the list
 function deleteItems() {
     [...result.children].forEach((item => {
         if(item.firstChild.checked){
@@ -50,6 +52,7 @@ function deleteItems() {
 
 }
 
+// clears the list
 function clearAll(){
     [...result.children].forEach((item) => {
         if(item !== inputItem){
@@ -57,7 +60,7 @@ function clearAll(){
         }
     })
 }
-
+//Undo the last action
 function undo() {
     alert("Undo not quite implemented just yet!")
 }
