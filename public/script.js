@@ -5,6 +5,7 @@ const inputItem = document.getElementById("input-item")
 const inputText = document.getElementById("input-text")
 const inputCheck = document.getElementById("input-check")
 const listItems = []
+const lists =["Lista 1", "Lista 2", "Lista 3"]
 
 inputCheck.disabled = true
 
@@ -12,10 +13,13 @@ inputCheck.disabled = true
 buttons.forEach((button)=> {
     button.addEventListener("click", (e)=>{
         if(e.currentTarget.id === "lists-btn"){
-            selectList()
+            clearAll()
+            lists.forEach((list)=>{
+                addItem(list)
+            })
         } else if (e.currentTarget.id === "delete-itm-btn") {
             deleteItems()
-        } else if (e.currentTarget.id === "undo--btn") {
+        } else if (e.currentTarget.id === "undo-btn") {
             undo()
         }
     })
@@ -44,6 +48,18 @@ function deleteItems() {
         }
     }))
 
+}
+
+function clearAll(){
+    [...result.children].forEach((item) => {
+        if(item !== inputItem){
+            result.removeChild(item)
+        }
+    })
+}
+
+function undo() {
+    alert("Undo not quite implemented just yet!")
 }
 
 

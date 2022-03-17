@@ -40,7 +40,9 @@ body {
 
 .header button img {
     width: 30px;
+    height: 30px;
     filter: invert(1);
+    z-index: 10;
 }
 
 .header button:hover img {
@@ -72,6 +74,11 @@ body {
     width: 100%;
     height: 60px;
 
+}
+
+.list-item:hover p {
+    font-weight: bold;
+    font-size: 27px;
 }
 
 .list-item input[type=checkbox] {
