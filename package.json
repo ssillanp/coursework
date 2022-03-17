@@ -2,10 +2,10 @@
   "name": "coursework",
   "version": "1.0.0",
   "description": "Course work for LUT, SDS: FullStack",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node main",
+    "dev": "nodemon main"
   },
   "keywords": [
     "node"
