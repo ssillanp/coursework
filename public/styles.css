@@ -74,7 +74,7 @@ body {
 
 }
 
-.list-item:hover p {
+.list-list:hover  p {
     font-weight: bold;
     font-size: 27px;
 }

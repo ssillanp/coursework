@@ -7,6 +7,7 @@ const inputCheck = document.getElementById("input-check")
 const listItems = []
 const lists =["Lista 1", "Lista 2", "Lista 3"]
 
+//Disable the checkbox for the input line, just for decoration
 inputCheck.disabled = true
 
 //Listener for the buttons
@@ -14,8 +15,8 @@ buttons.forEach((button)=> {
     button.addEventListener("click", (e)=>{
         if(e.currentTarget.id === "lists-btn"){
             clearAll()
-            lists.forEach((list)=>{
-                addItem(list)
+            lists.forEach((listName)=>{
+                addItem(new ListItem(listName, ["list-item", "list-list"]))
             })
         } else if (e.currentTarget.id === "delete-itm-btn") {
             deleteItems()
@@ -28,17 +29,14 @@ buttons.forEach((button)=> {
 //Listener for input new item
 inputItem.addEventListener("keyup", (e) => {
     if (e.key === "Enter" && inputItem.innerHTML !== ""){
-        addItem(inputText.value)
+        addItem(new ListItem(inputText.value, ["list-item"]))
     }
 })
 
 //adds an item in the list
-function addItem(text){
-    let li = document.createElement('li')
-    li.classList.add("list-item")
+function addItem(li){
     listItems.push(li)
-    li.innerHTML = `<input type="checkbox"><p>${text}</p>`
-    result.insertBefore(li, inputItem)
+    result.insertBefore(li.toHTMLElement(), inputItem)
     inputText.value = null
 }
 
@@ -65,4 +63,19 @@ function undo() {
     alert("Undo not quite implemented just yet!")
 }
 
+class ListItem {
+    #text = ''
+    #classList = []
 
+    constructor(text, classList){
+        this.#text = text
+        this.#classList = classList
+    }
+
+    toHTMLElement(){
+        let li = document.createElement('li')
+        this.#classList.forEach((item) => li.classList.add(item))
+        li.innerHTML = `<input type="checkbox"><p>${this.#text}</p>`
+        return li
+    }
+}
